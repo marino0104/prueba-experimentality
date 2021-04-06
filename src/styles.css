@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+:root {
+    --black: #000;
+    --white: #fff;
+    --lightgray: #EEEEEE;
+    --gray: #6B6B6B;
+    --darkgray: #3D3D3B;
+    --purple: #5B17AA
+}
+
+*,
+*:before,
+*:after,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+    list-style: none;
+    text-decoration: none;
+    font-size: 100%;
+}
+
+
+/* general */
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-weight: lighter;
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.color-white {
+    color: var(--white);
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* grid */
+
+.container-fluid {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
