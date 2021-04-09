@@ -52,28 +52,6 @@
     position: relative;
 }
 
-.search-container input {
-    height: 60px;
-    border: none;
-    width: 100%;
-    background-color: var(--lightgray);
-    font-size: 1.3rem;
-    border-radius: 5px;
-    padding: 0 50px 0 1rem;
-}
-
-.search-button {
-    position: absolute;
-    right: 22px;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-.search-button img {
-    height: 35px;
-}
-
 .main-nav {
     justify-content: center;
     padding: 1.2rem;

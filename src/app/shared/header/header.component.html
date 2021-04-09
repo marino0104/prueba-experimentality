@@ -5,12 +5,13 @@
                 <div class="row justify-space-between">
                     <div class="logo-container">
                         <h1>
-                            <img src="../../../assets/img/logo.svg" />
+                            <a [routerLink]="['/']">
+                                <img src="../../../assets/img/logo.svg" />
+                            </a>
                         </h1>
                     </div>
                     <div class="search-container">
-                        <input type="text" placeholder="Buscar aquí producto" class="bg-lightgray" />
-                        <button type="button" class="search-button"><img src="../../../assets/img/icon-search.svg"></button>
+                        <app-search-input></app-search-input>
                     </div>
                     <div class="user-container">
                         <div class="row">

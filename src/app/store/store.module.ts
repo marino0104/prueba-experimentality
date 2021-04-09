@@ -22,7 +22,7 @@ import { SliderProductsComponent } from './pages/components/slider-products/slid
   ],
   exports: [
     HomeComponent,
-    ProductListComponent
+    ProductListComponent,
   ]
 })
 export class StoreModule { }

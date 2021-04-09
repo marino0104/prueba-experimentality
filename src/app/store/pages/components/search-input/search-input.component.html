@@ -1,0 +1,16 @@
+<input type="text" placeholder="Buscar aquí producto" class="bg-lightgray input-search" #searchTerm (keyup)="searchProducts()" />
+<a [routerLink]="['/products', searchValue]" class="search-button"><img src="../../../assets/img/icon-search.svg"></a>
+<div class="sugest-items" *ngIf="searchValue?.length >= 3">
+    <div class="container">
+        <div class="row" *ngIf="sugestItems.length>0">
+            <div *ngFor="let sugestItem of sugestItems" class="sugest-item">
+                <img [src]="sugestItem.thumbnail" />
+                <h4>{{sugestItem.title}}</h4>
+                <span>{{sugestItem.price | currency}}</span>
+            </div>
+        </div>
+        <div class="row no-items" *ngIf="!sugestItems.length">
+            <p>No hay artículos para buscar</p>
+        </div>
+    </div>
+</div>

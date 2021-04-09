@@ -26,15 +26,11 @@ export class SliderProductsComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
-    // this.productsService.getProducts('MCO118376').subscribe((products)=>{
-    //   console.info(products);
-    // })
     this.productsService.getCategories().subscribe((cats)=>{
       this.categories=cats;
       this.ramdomCategory=Math.floor(Math.random() * this.categories.length) + 1;
       this.productsService.getProducts(this.categories[this.ramdomCategory-1].id).subscribe((products)=>{
       this.productListItems=products.results.slice(0,10);
-      console.info(this.productListItems);
     })
     })
   }
