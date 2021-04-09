@@ -74,3 +74,42 @@ button {
 .justify-space-between {
     justify-content: space-between;
 }
+
+.slider-home .slick-arrow {
+    position: absolute;
+    width: 35px;
+    height: 70px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-image: url('assets/img/white-arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.slider-home .prev-slide {
+    left: 1rem;
+    transform: rotate(180deg);
+}
+
+.slider-home .next-slide {
+    right: 1rem;
+}
+
+.slider-home .slick-dots {
+    position: absolute;
+    bottom: 1rem;
+}
+
+.slider-home .slick-dots>li>button:before {
+    width: 25px;
+    height: 25px;
+    content: "";
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: .4;
+    transition: all .2s ease-in-out;
+}

@@ -1,0 +1,10 @@
+<ul class="slider-home">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <li ngxSlickItem *ngFor="let banner of banners">
+            <picture>
+                <source media="(max-width:768px)" [srcset]="banner.smallImage" />
+                <img [src]="banner.bigImage" />
+            </picture>
+        </li>
+    </ngx-slick-carousel>
+</ul>

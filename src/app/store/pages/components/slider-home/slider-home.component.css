@@ -1,0 +1,11 @@
+.slider-home {
+    position: relative;
+}
+
+.slider-home>.carousel {
+    margin-bottom: 0;
+}
+
+.slider-home>.carousel .slick-slide img {
+    width: 100%;
+}
