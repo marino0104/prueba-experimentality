@@ -19,3 +19,18 @@
     width: 100%;
     cursor: pointer;
 }
+
+@media screen and (max-width:768px) {
+    .sections-container .col-6 {
+        width: 100%;
+    }
+    .sections-container {
+        padding: 2rem;
+    }
+    .sections-container .row {
+        flex-direction: column-reverse;
+    }
+    .sections-container .row>* {
+        margin-bottom: 2rem;
+    }
+}

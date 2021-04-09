@@ -3,12 +3,23 @@
         <div class="header-superior">
             <div class="container">
                 <div class="row justify-space-between">
+                    <div class="only-responsive burguer-button">
+                        <div class="button-container">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
                     <div class="logo-container">
                         <h1>
                             <a [routerLink]="['/']">
                                 <img src="../../../assets/img/logo.svg" />
                             </a>
                         </h1>
+                    </div>
+                    <div class="only-responsive search-show-button">
+                        <button class="search-show icon-button"><img src="../../../assets/img/icon-search.svg"/></button>
+
                     </div>
                     <div class="search-container">
                         <app-search-input></app-search-input>

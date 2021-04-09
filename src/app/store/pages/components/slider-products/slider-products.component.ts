@@ -21,7 +21,23 @@ export class SliderProductsComponent implements OnInit {
     "arrows": true,
     "nextArrow": "<div class='nav-btn-products next-slide-products'></div>",
     "prevArrow": "<div class='nav-btn-products prev-slide-products'></div>",
-    "mobileFirst":true};
+    "mobileFirst":true,
+    'responsive': [
+      {
+        'breakpoint': 768,
+         'settings': {
+          'slidesToShow': 4
+                }
+              },
+      {
+        'breakpoint': 320,
+         'settings': {
+          'slidesToShow': 1
+                }
+              }
+            ]
+  }
+    ;
 
   constructor(private productsService: ProductsService) { }
 

@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from '../../../services/products.service';
-import { Observable } from 'rxjs';
 import { Result } from '../../../interfaces/products';
 
 @Component({
@@ -18,7 +17,6 @@ export class SearchInputComponent implements OnInit {
   ngOnInit(): void {
     this.products.getProducts('MCO1430').subscribe(productList=>{
         this.productItems=productList.results;
-        console.info(this.productItems);
     })
   }
   searchProducts(){
@@ -26,13 +24,18 @@ export class SearchInputComponent implements OnInit {
     this.searchValue=this.searchTerm.nativeElement.value;
     if(this.searchValue.length>=3){
       this.productItems.forEach((product, i)=>{
-        // console.info(product.title.toLowerCase());
         if(product.title.toLowerCase().includes(this.searchValue)){
           this.sugestItems.push(product);
-          // console.info(`--${product.title}--`)
         }
       })
     }
     this.sugestItems=this.sugestItems.slice(0,4)
+  }
+  eraseProducts(){
+    const timeToErase=400
+    setTimeout(() => {
+      this.searchValue='';
+      this.sugestItems=[];
+    }, timeToErase);
   }
 }

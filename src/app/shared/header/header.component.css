@@ -1,3 +1,7 @@
+.only-responsive {
+    display: none;
+}
+
 .logo-container img {
     width: 300px;
 }
@@ -83,4 +87,68 @@
 
 .main-nav a:hover:after {
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .login-user {
+        display: none;
+    }
+    .header-inferior {
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        top: 0;
+        z-index: 1;
+        background-color: #fff;
+        color: #000;
+        left: -90%;
+        transition: all .3s ease-in-out;
+    }
+    .main-nav {
+        color: #000;
+        flex-direction: column;
+        padding-top: 3rem;
+    }
+    .main-nav a {
+        color: #000;
+        margin-bottom: 2rem;
+        display: block;
+        transition: all .3s ease-in-out;
+    }
+    .logo-container img {
+        width: 200px;
+    }
+    .burguer-button {
+        display: block;
+        width: 40px;
+    }
+    .bar {
+        width: 100%;
+        height: 7px;
+        background-color: #000;
+        margin-bottom: 7px;
+    }
+    .bar:last-child {
+        margin-bottom: 0;
+    }
+    .search-container {
+        position: absolute;
+        top: -100%;
+        width: 100%;
+        left: 0;
+        z-index: 2;
+        transition: all .3s ease-in-out;
+    }
+    .icon-button img {
+        height: 30px;
+    }
+    .header-superior>.container {
+        padding: 0 1rem;
+    }
+    .search-show-button {
+        display: block;
+    }
+    .icon-button {
+        margin: 0;
+    }
 }

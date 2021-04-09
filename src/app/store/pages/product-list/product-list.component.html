@@ -1,1 +1,16 @@
-<p>product-list works!</p>
+<div class="container searched-products">
+    <h2>Resultados de búsqueda por: <strong>{{searchItem}}</strong></h2>
+    <ul class="searched-products-container row" *ngIf="searchArray.length>0">
+        <li *ngFor="let product of searchArray" class="product-list-item">
+            <img [src]="product.thumbnail" />
+            <h4>{{product.title}}</h4>
+            <div class="row">
+                <span class="product-original-price">{{product.original_price | currency}}</span>
+                <span class="product-sale-price">{{product.price | currency}}</span>
+            </div>
+        </li>
+    </ul>
+    <div class="no-items" *ngIf="!searchArray.length">
+        <p>No se encontraron coincidencias. Por favor, intente buscar nuevamente</p>
+    </div>
+</div>

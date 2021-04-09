@@ -154,3 +154,24 @@ button {
 .slider-home-products .next-slide-products {
     right: -1rem;
 }
+
+
+/* breakpoints */
+
+@media screen and (max-width: 1366px) {
+    .slider-home-products .prev-slide-products {
+        left: 0;
+    }
+    .slider-home-products .next-slide-products {
+        right: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .no-responsive {
+        display: none;
+    }
+    .container {
+        padding: 0 2rem;
+    }
+}

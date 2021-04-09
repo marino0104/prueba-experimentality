@@ -1,5 +1,5 @@
 <input type="text" placeholder="Buscar aquí producto" class="bg-lightgray input-search" #searchTerm (keyup)="searchProducts()" />
-<a [routerLink]="['/products', searchValue]" class="search-button"><img src="../../../assets/img/icon-search.svg"></a>
+<a [routerLink]="['/products', searchValue]" class="search-button" (click)="eraseProducts()"><img src="../../../assets/img/icon-search.svg"></a>
 <div class="sugest-items" *ngIf="searchValue?.length >= 3">
     <div class="container">
         <div class="row" *ngIf="sugestItems.length>0">
@@ -9,8 +9,11 @@
                 <span>{{sugestItem.price | currency}}</span>
             </div>
         </div>
+        <div class="row view-more" *ngIf="sugestItems.length>0">
+            <a [routerLink]="['/products', searchValue]" (click)="eraseProducts()">Ver todo...</a>
+        </div>
         <div class="row no-items" *ngIf="!sugestItems.length">
-            <p>No hay artículos para buscar</p>
+            <p>No hay artículos para mostrar</p>
         </div>
     </div>
 </div>
