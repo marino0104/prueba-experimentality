@@ -73,6 +73,11 @@
     border-left: 1px solid #fff;
 }
 
+.main-nav li:nth-child(1) {
+    padding: 0 30px;
+    border-left: none;
+}
+
 .main-nav a:after {
     position: absolute;
     bottom: 0;
