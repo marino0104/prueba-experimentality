@@ -1,0 +1,35 @@
+.slider-home-products {
+    position: relative;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+}
+
+.product-list-item {
+    padding: 0 3rem;
+}
+
+.product-list-item img {
+    width: 70%;
+    margin: auto;
+    aspect-ratio: 1;
+    margin-bottom: 1rem
+}
+
+.product-list-item h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    min-height: 4rem;
+}
+
+.product-list-item .row {
+    justify-content: space-between;
+}
+
+.product-list-item .product-original-price {
+    text-decoration: line-through;
+    color: var(--gray);
+}
+
+.product-list-item .product-sale-price {
+    color: var(--purple);
+}

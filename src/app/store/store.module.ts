@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { SliderHomeComponent } from './pages/components/slider-home/slider-home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SliderProductsComponent } from './pages/components/slider-products/slider-products.component';
 
 
 
@@ -11,7 +12,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   declarations: [
     HomeComponent,
     ProductListComponent,
-    SliderHomeComponent
+    SliderHomeComponent,
+    SliderProductsComponent
 
   ],
   imports: [

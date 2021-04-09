@@ -1,0 +1,21 @@
+/* slider */
+
+
+/* sections */
+
+.sections-container {
+    padding: 4rem 0;
+}
+
+.sections-container .col-6 {
+    width: 48%;
+}
+
+.sections-container .row {
+    justify-content: space-between;
+}
+
+.sections-container .col-6 img {
+    width: 100%;
+    cursor: pointer;
+}
