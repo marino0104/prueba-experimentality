@@ -151,4 +151,23 @@
     .icon-button {
         margin: 0;
     }
+    .nav-active {
+        left: 0;
+    }
+    .nav-close {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 30px;
+    }
+    .search-active {
+        top: 0;
+        padding: 1rem;
+        background-color: #fff;
+    }
+    .search-close-button {
+        display: block;
+        text-align: right;
+    }
 }

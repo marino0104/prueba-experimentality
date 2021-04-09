@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row justify-space-between">
                     <div class="only-responsive burguer-button">
-                        <div class="button-container">
+                        <div class="button-container" (click)="openMenu()">
                             <div class="bar"></div>
                             <div class="bar"></div>
                             <div class="bar"></div>
@@ -18,10 +18,12 @@
                         </h1>
                     </div>
                     <div class="only-responsive search-show-button">
-                        <button class="search-show icon-button"><img src="../../../assets/img/icon-search.svg"/></button>
-
+                        <button class="search-show icon-button" (click)="openSearch()"><img src="../../../assets/img/icon-search.svg"/></button>
                     </div>
                     <div class="search-container">
+                        <div class="only-responsive search-close-button">
+                            <button class="search-show icon-button" (click)="closeSearch()"><img src="../../../assets/img/icon-cancel.svg"/></button>
+                        </div>
                         <app-search-input></app-search-input>
                     </div>
                     <div class="user-container">
@@ -51,6 +53,7 @@
                         <li><a href="#!" class="color-white">Ofertas</a></li>
                     </ul>
                 </nav>
+                <div class="nav-close only-responsive" (click)="closeNav()"><img src="../../../assets/img/icon-cancel.svg" /></div>
             </div>
         </div>
     </div>

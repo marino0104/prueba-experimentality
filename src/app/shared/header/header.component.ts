@@ -11,5 +11,16 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  openMenu(): void{
+    document.querySelector('.header-inferior').classList.add('nav-active');
+  }
+  closeNav(): void{
+    document.querySelector('.header-inferior').classList.remove('nav-active');
+  }
+  openSearch(): void{
+    document.querySelector('.search-container').classList.add('search-active');
+  }
+  closeSearch(): void{
+    document.querySelector('.search-container').classList.remove('search-active');
+  }
 }
