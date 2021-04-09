@@ -14,27 +14,28 @@ export class ProductListComponent implements OnInit {
   searchArray: Result[]=[];
   timeToChargeItems:number=500;
 
-  constructor(private activatedRoute: ActivatedRoute, private products: ProductsService) { }
+  constructor(private activatedRoute: ActivatedRoute, private products: ProductsService) {
+  }
   ngOnInit(): void {
-    this.searchArray =[];
-    this.activatedRoute.paramMap.subscribe(params=>{
-      this.searchItem=params.get('id');
-    });
-    this.products.getProducts('MCO1430').subscribe(productList=>{
-      this.productItems=productList.results;
-  })
-  setTimeout(() => {
-    this.productItems.forEach((product, i)=>{
-      // console.info(product);
-      console.info(this.searchItem);
-      console.info(this.searchArray)
-      if(product.title.toLowerCase().includes(this.searchItem)){
-        this.searchArray.push(product);
-      }
-    })
+    this.activatedRoute.paramMap.subscribe(queryParam=>{
+      this.searchItem=queryParam.get('id');
+      console.info(queryParam.get('id'))
+      this.searchArray =[];
 
-  }, this.timeToChargeItems);
-  console.info(this.searchArray)
+      this.products.getProducts('MCO1430').subscribe(productList=>{
+        this.productItems=productList.results;
+    })
+    setTimeout(() => {
+      this.productItems.forEach((product, i)=>{
+
+        if(product.title.toLowerCase().includes(this.searchItem)){
+          this.searchArray.push(product);
+        }
+      })
+
+    }, this.timeToChargeItems);
+    });
+
   }
 
 }
