@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ProductsService } from '../../../services/products.service';
-import { Result } from '../../../interfaces/products';
+import { ProductsService } from '../../../store/services/products.service';
+import { Result } from '../../../store/interfaces/products';
 
 @Component({
   selector: 'app-search-input',
