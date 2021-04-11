@@ -155,6 +155,20 @@ button {
     right: -1rem;
 }
 
+.button-primary {
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--purple);
+    transition: all .2s ease-in-out;
+    margin: 2rem 0;
+    padding: 0 2rem;
+    color: var(--white);
+}
+
+button.button-primary:hover {
+    opacity: .7;
+}
+
 
 /* breakpoints */
 

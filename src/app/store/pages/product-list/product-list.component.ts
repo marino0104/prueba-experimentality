@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { Result } from '../../interfaces/products';
+import { CartService } from '../../../shared/services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -14,7 +15,9 @@ export class ProductListComponent implements OnInit {
   searchArray: Result[]=[];
   timeToChargeItems:number=500;
 
-  constructor(private activatedRoute: ActivatedRoute, private products: ProductsService) {
+  constructor(private activatedRoute: ActivatedRoute,
+              private products: ProductsService,
+              private cart:CartService) {
   }
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(queryParam=>{
@@ -36,6 +39,9 @@ export class ProductListComponent implements OnInit {
     }, this.timeToChargeItems);
     });
 
+  }
+  saveToCart(product: Result){
+    this.cart.setProductCart(product);
   }
 
 }

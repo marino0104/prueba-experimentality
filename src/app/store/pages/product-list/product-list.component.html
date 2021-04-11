@@ -8,6 +8,9 @@
                 <span class="product-original-price">{{product.original_price | currency}}</span>
                 <span class="product-sale-price">{{product.price | currency}}</span>
             </div>
+            <div class="align-center">
+                <button class="button-primary" (click)="saveToCart(product)">Añadir al carrito</button>
+            </div>
         </li>
     </ul>
     <div class="no-items" *ngIf="!searchArray.length">
