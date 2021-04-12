@@ -22,7 +22,6 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(queryParam=>{
       this.searchItem=queryParam.get('id');
-      console.info(queryParam.get('id'))
       this.searchArray =[];
 
       this.products.getProducts('MCO1430').subscribe(productList=>{

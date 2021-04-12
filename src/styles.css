@@ -169,6 +169,16 @@ button.button-primary:hover {
     opacity: .7;
 }
 
+.icon-button {
+    position: relative;
+    margin: 0 15px;
+}
+
+.icon-button img {
+    height: 35px;
+    width: auto;
+}
+
 
 /* breakpoints */
 
@@ -187,5 +197,11 @@ button.button-primary:hover {
     }
     .container {
         padding: 0 2rem;
+    }
+    .icon-button {
+        margin: 0;
+    }
+    .icon-button img {
+        height: 30px;
     }
 }
