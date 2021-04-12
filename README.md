@@ -26,3 +26,6 @@ para correrlo y abrirlo manual, mediante la url http://localhost:4200
 ##Requisitos
 - Node
 - Angular cli
+
+##Ejemplo en vivo
+Puede ver el ejemplo en vivo en https://prueba-experimentality.herokuapp.com/
