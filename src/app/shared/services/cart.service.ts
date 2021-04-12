@@ -34,6 +34,4 @@ export class CartService {
       this.cart.next(this.cartItems);
     }
   }
-
-
 }

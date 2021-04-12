@@ -165,6 +165,13 @@ button {
     color: var(--white);
 }
 
+.button-primary:disabled,
+.button-primary:disabled:hover {
+    opacity: .5;
+    cursor: not-allowed;
+    background-color: var(--gray);
+}
+
 button.button-primary:hover {
     opacity: .7;
 }

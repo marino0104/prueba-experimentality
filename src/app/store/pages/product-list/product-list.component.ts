@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
   searchItem: string;
   productItems: any[];
   searchArray: Result[]=[];
+  cartItems: Result[]=[];
   timeToChargeItems:number=500;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -28,7 +29,7 @@ export class ProductListComponent implements OnInit {
         this.productItems=productList.results;
     })
     setTimeout(() => {
-      this.productItems.forEach((product, i)=>{
+      this.productItems.forEach(product=>{
 
         if(product.title.toLowerCase().includes(this.searchItem)){
           this.searchArray.push(product);
@@ -37,9 +38,24 @@ export class ProductListComponent implements OnInit {
 
     }, this.timeToChargeItems);
     });
-
+    this.cart.currentCartItems$.subscribe(cartCurrent=>{
+      this.cartItems=cartCurrent;
+      if(this.cartItems && this.cartItems.length){
+        this.searchArray.forEach(searchItem=>{
+          let itemInCart=0;
+          this.cartItems.forEach(cartItem=>{
+            if(searchItem.id===cartItem.id){
+              itemInCart+=1;
+            }
+          })
+          if(itemInCart>0){
+            searchItem.inCart=true;
+          }
+        })
+      }
+    })
   }
-  saveToCart(product: Result){
+  saveToCart=(product: Result)=>{
     this.cart.setProductCart(product);
   }
 

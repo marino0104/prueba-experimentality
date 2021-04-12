@@ -9,7 +9,8 @@
                 <span class="product-sale-price">{{product.price | currency}}</span>
             </div>
             <div class="align-center">
-                <button class="button-primary" (click)="saveToCart(product)">Añadir al carrito</button>
+                <button class="button-primary" (click)="saveToCart(product)" *ngIf="!product.inCart">Añadir al carrito</button>
+                <button class="button-primary" disabled *ngIf="product.inCart">¡Añadido al carrito!</button>
             </div>
         </li>
     </ul>

@@ -86,6 +86,7 @@ export interface Result {
   tags:                  ResultTag[];
   order_backend:         number;
   use_thumbnail_id:      boolean;
+  inCart?:               boolean;
 }
 
 export interface Address {

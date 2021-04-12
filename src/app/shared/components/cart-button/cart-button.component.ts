@@ -8,20 +8,17 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartButtonComponent implements OnInit {
   cart: number;
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService) {}
 
+  ngOnInit(): void {
     this.cartService.currentCartItems$.subscribe(val=>{
       if(val){
         this.cart=val.length;
-
       }
       else{
         this.cart=0;
       }
     })
-  }
-
-  ngOnInit(): void {
   }
 
 }
