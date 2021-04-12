@@ -1,2 +1,5 @@
-<button class="cart-button icon-button"><img src="../../../assets/img/icon-cart.svg"/></button>
+<button class="cart-button icon-button" (click)="openCart()"><img src="../../../assets/img/icon-cart.svg"/></button>
 <span class="cart-number">{{cart}}</span>
+<div class="cart" *ngIf="cartIsOpen">
+    <app-cart-list></app-cart-list>
+</div>

@@ -1,0 +1,18 @@
+<div class="cart-container">
+    <div class="cart-grid" *ngIf="cartItems.length">
+        <div class="cart-grid-content" *ngFor="let item of cartItems">
+            <div class="cart-grid-image">
+                <img [src]="item.thumbnail" />
+            </div>
+            <div class="cart-grid-name">
+                <p><strong>{{item.title}}</strong></p>
+            </div>
+            <div class="cart-grid-price">
+                <p><strong>{{item.price}}</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="cart-text" *ngIf="!cartItems.length">
+        <div>No hay items en el carrito</div>
+    </div>
+</div>

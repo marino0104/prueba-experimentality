@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { RouterModule } from '@angular/router';
 import { CartButtonComponent } from './components/cart-button/cart-button.component';
+import { CartListComponent } from './components/cart-list/cart-list.component';
 
 
 
@@ -13,7 +14,8 @@ import { CartButtonComponent } from './components/cart-button/cart-button.compon
     FooterComponent,
     HeaderComponent,
     SearchInputComponent,
-    CartButtonComponent
+    CartButtonComponent,
+    CartListComponent
   ],
   imports: [
     CommonModule,

@@ -8,6 +8,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartButtonComponent implements OnInit {
   cart: number;
+  cartIsOpen:boolean=false
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
@@ -20,5 +21,7 @@ export class CartButtonComponent implements OnInit {
       }
     })
   }
-
+  openCart(): void{
+    this.cartIsOpen=!this.cartIsOpen
+  }
 }
