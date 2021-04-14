@@ -5,20 +5,21 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { SliderHomeComponent } from './pages/components/slider-home/slider-home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SliderProductsComponent } from './pages/components/slider-products/slider-products.component';
-
-
-
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     HomeComponent,
     ProductListComponent,
     SliderHomeComponent,
-    SliderProductsComponent
+    SliderProductsComponent,
+    NotFoundComponent
 
   ],
   imports: [
     CommonModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    RouterModule
   ],
   exports: [
     HomeComponent,
