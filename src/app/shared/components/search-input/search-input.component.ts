@@ -24,7 +24,7 @@ export class SearchInputComponent implements OnInit {
     this.searchValue=this.searchTerm.nativeElement.value;
     if(this.searchValue.length>=3){
       this.productItems.forEach((product, i)=>{
-        if(product.title.toLowerCase().includes(this.searchValue)){
+        if(product.title.toLowerCase().includes(this.searchValue.toLowerCase())){
           this.sugestItems.push(product);
         }
       })

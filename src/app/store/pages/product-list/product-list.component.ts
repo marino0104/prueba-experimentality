@@ -21,6 +21,10 @@ export class ProductListComponent implements OnInit {
               private cart:CartService) {
   }
   ngOnInit(): void {
+    this.showSearchedItems();
+    this.showCartItems();
+  }
+  showSearchedItems(): void{
     this.activatedRoute.paramMap.subscribe(queryParam=>{
       this.searchItem=queryParam.get('id');
       this.searchArray =[];
@@ -31,32 +35,37 @@ export class ProductListComponent implements OnInit {
     setTimeout(() => {
       this.productItems.forEach(product=>{
 
-        if(product.title.toLowerCase().includes(this.searchItem)){
+        if(product.title.toLowerCase().includes(this.searchItem.toLowerCase())){
           this.searchArray.push(product);
         }
       })
-
+      this.showSelectedItems();
     }, this.timeToChargeItems);
     });
-    this.cart.currentCartItems$.subscribe(cartCurrent=>{
-      this.cartItems=cartCurrent;
-      if(this.cartItems && this.cartItems.length){
-        this.searchArray.forEach(searchItem=>{
-          let itemInCart=0;
-          this.cartItems.forEach(cartItem=>{
-            if(searchItem.id===cartItem.id){
-              itemInCart+=1;
-            }
-          })
-          if(itemInCart>0){
-            searchItem.inCart=true;
+  }
+  showSelectedItems(): void{
+    if(this.cartItems && this.cartItems.length){
+      this.searchArray.forEach(searchItem=>{
+        let itemInCart=0;
+        this.cartItems.forEach(cartItem=>{
+          if(searchItem.id===cartItem.id){
+            itemInCart+=1;
           }
         })
-      }
-    })
+        if(itemInCart>0){
+          searchItem.inCart=true;
+        }
+      })
+    }
   }
-  saveToCart=(product: Result)=>{
+  saveToCart(product: Result):void{
     this.cart.setProductCart(product);
+  }
+  showCartItems():void{
+    this.cart.currentCartItems$.subscribe(cartCurrent=>{
+      this.cartItems=cartCurrent;
+      this.showSelectedItems();
+    })
   }
 
 }
